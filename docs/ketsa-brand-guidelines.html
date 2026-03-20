@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketsa — Brand Guidelines v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08090c;
+    --surface: #0f1115;
+    --surface-2: #161920;
+    --border: #1f222d;
+    --border-light: #282c3a;
+    --text: #e4e2de;
+    --text-dim: #8b8994;
+    --ember: #e85d3a;
+    --ember-glow: rgba(232, 93, 58, 0.12);
+    --ember-dim: #b8472b;
+    --midnight: #0c0e14;
+    --slate: #1a1d28;
+    --bone: #f0ebe3;
+    --pewter: #8b8994;
+    --teal: #3abfbf;
+    --teal-dim: rgba(58, 191, 191, 0.10);
+    --green: #4fad68;
+    --green-dim: rgba(79, 173, 104, 0.10);
+    --gold: #d4a843;
+    --gold-dim: rgba(212, 168, 67, 0.10);
+    --red: #d94f4f;
+    --red-dim: rgba(217, 79, 79, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 72px 36px 140px; }
+
+  /* Nav dots */
+  .toc {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+  }
+  .toc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-light);
+    transition: all 0.3s;
+  }
+  .toc-dot:hover { background: var(--ember); transform: scale(1.4); }
+
+  /* Cover */
+  .cover {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--ember-glow) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cover-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .cover-title {
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .cover-sub {
+    font-family: 'Newsreader', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-dim);
+    max-width: 560px;
+    position: relative;
+  }
+
+  .cover-version {
+    margin-top: 32px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+
+  /* Sections */
+  .section { margin-bottom: 96px; }
+
+  .sec-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ember-dim);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: 40px;
+    letter-spacing: -0.5px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 24px;
+  }
+
+  p { color: var(--text-dim); font-size: 15px; margin-bottom: 16px; line-height: 1.75; }
+  strong { color: var(--text); font-weight: 600; }
+
+  /* Do / Don't Grid */
+  .dd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .dd-card {
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid;
+  }
+
+  .dd-do {
+    background: var(--green-dim);
+    border-color: rgba(79, 173, 104, 0.2);
+  }
+
+  .dd-dont {
+    background: var(--red-dim);
+    border-color: rgba(217, 79, 79, 0.2);
+  }
+
+  .dd-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .dd-do .dd-label { color: var(--green); }
+  .dd-dont .dd-label { color: var(--red); }
+
+  .dd-card ul { padding-left: 18px; margin: 0; }
+  .dd-card li { font-size: 13.5px; margin-bottom: 8px; line-height: 1.6; color: var(--text); }
+
+  /* Logo Display */
+  .logo-stage {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-stage-light {
+    background: var(--bone);
+    border-color: #d9d4cc;
+  }
+
+  .logo-stage-ember {
+    background: var(--ember);
+    border-color: var(--ember-dim);
+  }
+
+  .logo-stage-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .logo-stage-light .logo-stage-label { color: #6b6660; }
+  .logo-stage-ember .logo-stage-label { color: rgba(255,255,255,0.6); }
+
+  /* Logo Grid */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .logo-grid .logo-stage {
+    min-height: 160px;
+    padding: 32px;
+  }
+
+  /* Spacing Demo */
+  .clearspace-demo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+    position: relative;
+  }
+
+  /* Color Swatches */
+  .swatch-row {
+    display: flex;
+    gap: 16px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+
+  .swatch-card {
+    flex: 1;
+    min-width: 120px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .swatch-block {
+    height: 80px;
+    width: 100%;
+  }
+
+  .swatch-info {
+    padding: 12px 14px;
+  }
+
+  .swatch-info-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .swatch-info-hex {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  /* Type Specimens */
+  .type-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .type-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  .type-sample {
+    color: var(--text);
+  }
+
+  /* Tone Cards */
+  .tone-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .tone-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .tone-card h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .tone-card p {
+    font-size: 13px;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  .tone-card .tone-yes { color: var(--green); }
+  .tone-card .tone-no { color: var(--red); }
+
+  /* Box */
+  .box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 24px 0;
+  }
+
+  .box-accent {
+    border-color: rgba(232, 93, 58, 0.25);
+    background: linear-gradient(135deg, var(--ember-glow), var(--surface));
+  }
+
+  .box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--ember);
+  }
+
+  .box p { margin-bottom: 0; }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 80px 0; }
+
+  /* Min size demo */
+  .min-size-row {
+    display: flex;
+    gap: 32px;
+    align-items: flex-end;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+
+  .min-size-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .min-size-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  /* Misuse examples */
+  .misuse-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .misuse-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .misuse-card::after {
+    content: '✗';
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 16px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .misuse-label {
+    font-size: 11px;
+    color: var(--red);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  ul { padding-left: 20px; margin: 12px 0; }
+  li { color: var(--text-dim); font-size: 14px; margin-bottom: 8px; line-height: 1.65; }
+  li strong { color: var(--text); }
+
+  .footer {
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .footer p { font-size: 12px; color: var(--text-dim); }
+
+  @media (max-width: 700px) {
+    .container { padding: 40px 20px 80px; }
+    .cover-title { font-size: 48px; }
+    h2 { font-size: 30px; }
+    .dd-grid, .tone-grid, .logo-grid, .misuse-grid { grid-template-columns: 1fr; }
+    .type-row { grid-template-columns: 1fr; }
+    .toc { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-label">Brand Guidelines</div>
+    <h1 class="cover-title">Ketsa</h1>
+    <p class="cover-sub">Visual identity system, usage rules, and brand standards for a mobile privacy protection platform.</p>
+    <div class="cover-version">v1.0 — March 2026 — Confidential</div>
+  </div>
+
+  <!-- ===================== -->
+  <!-- SECTION 1: LOGO MARKS -->
+  <!-- ===================== -->
+  <div class="section">
+    <div class="sec-tag">01 — Logo System</div>
+    <h2>Primary Marks</h2>
+    <p>Ketsa uses a two-part logo system: a <strong>brand mark</strong> (The Hover — a stylized kestrel in hover) and an <strong>app icon</strong> (The Strike Mark — a kinetic K-slash). They can be used independently or together with the wordmark.</p>
+
+    <h3>The Hover — Primary Brand Mark</h3>
+    <p>The hovering kestrel, abstracted to geometric form. Used on the website, pitch decks, marketing materials, and merchandise. It carries the brand narrative.</p>
+
+    <div class="logo-stage">
+      <div class="logo-stage-label">Dark Background — Primary</div>
+      <svg width="180" height="160" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Kestrel hover mark — geometric bird in hover posture -->
+        <!-- Left wing -->
+        <path d="M30 68 L72 42 L82 62 L50 78 Z" fill="#e85d3a" opacity="0.9"/>
+        <path d="M18 82 L50 78 L58 72 L72 42 L30 68 L14 90 Z" fill="#e85d3a" opacity="0.65"/>
+        <!-- Right wing -->
+        <path d="M150 68 L108 42 L98 62 L130 78 Z" fill="#e85d3a" opacity="0.9"/>
+        <path d="M162 82 L130 78 L122 72 L108 42 L150 68 L166 90 Z" fill="#e85d3a" opacity="0.65"/>
+        <!-- Body -->
+        <path d="M82 38 L90 28 L98 38 L96 80 L90 120 L84 80 Z" fill="#e85d3a"/>
+        <!-- Head -->
+        <ellipse cx="90" cy="26" rx="8" ry="10" fill="#e85d3a"/>
+        <!-- Eye -->
+        <circle cx="90" cy="24" r="2.5" fill="#0f1115"/>
+        <!-- Tail -->
+        <path d="M84 100 L90 135 L96 100 Z" fill="#e85d3a" opacity="0.75"/>
+        <!-- Wordmark -->
+        <text x="90" y="155" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="18" letter-spacing="4" fill="#e4e2de">KETSA</text>
+      </svg>
+    </div>
+
+    <div class="logo-stage logo-stage-light">
+      <div class="logo-stage-label" style="color: #6b6660;">Light Background</div>
+      <svg width="180" height="160" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 68 L72 42 L82 62 L50 78 Z" fill="#0c0e14" opacity="0.9"/>
+        <path d="M18 82 L50 78 L58 72 L72 42 L30 68 L14 90 Z" fill="#0c0e14" opacity="0.55"/>
+        <path d="M150 68 L108 42 L98 62 L130 78 Z" fill="#0c0e14" opacity="0.9"/>
+        <path d="M162 82 L130 78 L122 72 L108 42 L150 68 L166 90 Z" fill="#0c0e14" opacity="0.55"/>
+        <path d="M82 38 L90 28 L98 38 L96 80 L90 120 L84 80 Z" fill="#0c0e14"/>
+        <ellipse cx="90" cy="26" rx="8" ry="10" fill="#0c0e14"/>
+        <circle cx="90" cy="24" r="2.5" fill="#f0ebe3"/>
+        <path d="M84 100 L90 135 L96 100 Z" fill="#0c0e14" opacity="0.65"/>
+        <text x="90" y="155" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="18" letter-spacing="4" fill="#0c0e14">KETSA</text>
+      </svg>
+    </div>
+
+    <h3>The Strike Mark — App Icon</h3>
+    <p>A kinetic diagonal stroke that reads as a stylized K and a talon mark simultaneously. This is the primary mark for the app icon, notification badges, and in-app UI elements. It should feel like something that <em>just happened</em> — a quick, decisive action.</p>
+
+    <div class="logo-grid">
+      <div class="logo-stage">
+        <div class="logo-stage-label">App Icon — Dark</div>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" rx="18" fill="#0c0e14"/>
+          <!-- Strike K mark -->
+          <path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#e85d3a"/>
+        </svg>
+      </div>
+      <div class="logo-stage logo-stage-light">
+        <div class="logo-stage-label" style="color: #6b6660;">App Icon — Light</div>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" rx="18" fill="#f0ebe3"/>
+          <path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#0c0e14"/>
+        </svg>
+      </div>
+      <div class="logo-stage logo-stage-ember">
+        <div class="logo-stage-label">App Icon — Ember</div>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" rx="18" fill="#e85d3a"/>
+          <path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+
+    <h3>The Beacon Lens — Secondary Mark</h3>
+    <p>Concentric rings radiating from a warm center point. Used for the encounter activation state, loading animations, and GPS-related features. This mark animates — rings pulse outward when Ketsa is actively recording.</p>
+
+    <div class="logo-grid">
+      <div class="logo-stage">
+        <div class="logo-stage-label">Static</div>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="28" stroke="#e85d3a" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="40" cy="40" r="20" stroke="#e85d3a" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="40" cy="40" r="12" stroke="#e85d3a" stroke-width="1.5" opacity="0.75"/>
+          <circle cx="40" cy="40" r="5" fill="#e85d3a"/>
+        </svg>
+      </div>
+      <div class="logo-stage">
+        <div class="logo-stage-label">Active State</div>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="32" stroke="#e85d3a" stroke-width="1" opacity="0.15"/>
+          <circle cx="40" cy="40" r="26" stroke="#e85d3a" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="40" cy="40" r="20" stroke="#e85d3a" stroke-width="2" opacity="0.5"/>
+          <circle cx="40" cy="40" r="13" stroke="#e85d3a" stroke-width="2.5" opacity="0.75"/>
+          <circle cx="40" cy="40" r="6" fill="#e85d3a"/>
+          <circle cx="40" cy="40" r="3" fill="#0f1115"/>
+        </svg>
+      </div>
+      <div class="logo-stage logo-stage-light">
+        <div class="logo-stage-label" style="color: #6b6660;">Light Variant</div>
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="28" stroke="#0c0e14" stroke-width="1.5" opacity="0.15"/>
+          <circle cx="40" cy="40" r="20" stroke="#0c0e14" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="40" cy="40" r="12" stroke="#0c0e14" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="40" cy="40" r="5" fill="#e85d3a"/>
+        </svg>
+      </div>
+    </div>
+
+    <h3>Wordmark</h3>
+    <div class="logo-stage" style="min-height: 120px;">
+      <div class="logo-stage-label">Primary Wordmark</div>
+      <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 56px; letter-spacing: -2px; color: var(--text);">Ketsa</span>
+    </div>
+    <div class="logo-stage" style="min-height: 120px;">
+      <div class="logo-stage-label">Tracked Wordmark — Campaign Use</div>
+      <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 42px; letter-spacing: 10px; text-transform: uppercase; color: var(--text);">KETSA</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ===================== -->
+  <!-- SECTION 2: LOGO RULES -->
+  <!-- ===================== -->
+  <div class="section">
+    <div class="sec-tag">02 — Logo Usage Rules</div>
+    <h2>Dos & Don'ts: Logo</h2>
+
+    <h3>Clear Space</h3>
+    <p>Maintain a minimum clear space around the logo equal to the height of the "K" in the wordmark. No other elements — text, images, borders, or UI components — may enter this zone.</p>
+
+    <div class="clearspace-demo">
+      <div style="border: 1px dashed rgba(232, 93, 58, 0.3); padding: 32px; border-radius: 8px; position: relative;">
+        <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ember); letter-spacing: 1px;">CLEAR SPACE = K HEIGHT</div>
+        <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -1px; color: var(--text);">Ketsa</span>
+      </div>
+    </div>
+
+    <h3>Minimum Size</h3>
+    <p>Never render the logo below these minimum sizes. Below these thresholds, legibility degrades and the brand loses authority.</p>
+
+    <div class="min-size-row">
+      <div class="min-size-item">
+        <svg width="16" height="16" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#0c0e14"/><path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#e85d3a"/></svg>
+        <span class="min-size-label">16px — Favicon</span>
+      </div>
+      <div class="min-size-item">
+        <svg width="29" height="29" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#0c0e14"/><path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#e85d3a"/></svg>
+        <span class="min-size-label">29px — App Store min</span>
+      </div>
+      <div class="min-size-item">
+        <svg width="48" height="48" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#0c0e14"/><path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#e85d3a"/></svg>
+        <span class="min-size-label">48px — Notification</span>
+      </div>
+      <div class="min-size-item">
+        <svg width="64" height="64" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#0c0e14"/><path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#e85d3a"/></svg>
+        <span class="min-size-label">64px — Standard use</span>
+      </div>
+      <div class="min-size-item">
+        <svg width="120" height="120" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" rx="18" fill="#0c0e14"/><path d="M28 16 L34 16 L34 38 L54 16 L62 16 L40 40 L62 64 L54 64 L34 42 L34 64 L28 64 Z" fill="#e85d3a"/></svg>
+        <span class="min-size-label">120px — Home screen</span>
+      </div>
+    </div>
+
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Use the logo on solid backgrounds (Midnight, Bone, or Ember only)</li>
+          <li>Maintain the clear space zone at all times</li>
+          <li>Use the provided color variants — Ember on dark, Midnight on light, White on Ember</li>
+          <li>Scale proportionally — always lock aspect ratio</li>
+          <li>Use the Strike Mark (K) for app icon and small contexts</li>
+          <li>Use the Hover Mark for brand/marketing contexts</li>
+          <li>Center-align the logo when used as a standalone element</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Place the logo on busy photographs or patterned backgrounds</li>
+          <li>Rotate, skew, or distort the logo in any way</li>
+          <li>Add drop shadows, glows, outlines, or emboss effects</li>
+          <li>Change the logo colors to anything outside the approved palette</li>
+          <li>Stretch or squish — <em>ever</em></li>
+          <li>Place text or UI elements inside the clear space</li>
+          <li>Recreate the logo in a different typeface</li>
+          <li>Use low-resolution or pixelated versions</li>
+          <li>Animate the Hover Mark (only the Beacon Lens animates)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Logo Misuse Examples</h3>
+    <div class="misuse-grid">
+      <div class="misuse-card">
+        <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 24px; color: var(--text); transform: rotate(15deg); display: inline-block;">Ketsa</span>
+        <div class="misuse-label">No rotation</div>
+      </div>
+      <div class="misuse-card">
+        <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 24px; color: #7b5fe0;">Ketsa</span>
+        <div class="misuse-label">No off-brand colors</div>
+      </div>
+      <div class="misuse-card">
+        <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 24px; color: var(--text); transform: scaleX(1.4); display: inline-block;">Ketsa</span>
+        <div class="misuse-label">No stretching</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- =================== -->
+  <!-- SECTION 3: COLOR     -->
+  <!-- =================== -->
+  <div class="section">
+    <div class="sec-tag">03 — Color</div>
+    <h2>Dos & Don'ts: Color</h2>
+
+    <h3>Primary Palette</h3>
+    <div class="swatch-row">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #0c0e14;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Midnight</div>
+          <div class="swatch-info-hex">#0C0E14 · RGB 12, 14, 20</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #e85d3a;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Ember</div>
+          <div class="swatch-info-hex">#E85D3A · RGB 232, 93, 58</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #f0ebe3;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Bone</div>
+          <div class="swatch-info-hex">#F0EBE3 · RGB 240, 235, 227</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #1a1d28;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Slate</div>
+          <div class="swatch-info-hex">#1A1D28 · RGB 26, 29, 40</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Functional Palette</h3>
+    <div class="swatch-row">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #4fad68;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Secure</div>
+          <div class="swatch-info-hex">#4FAD68</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #d4a843;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Warning</div>
+          <div class="swatch-info-hex">#D4A843</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #d94f4f;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Alert</div>
+          <div class="swatch-info-hex">#D94F4F</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background: #3abfbf;"></div>
+        <div class="swatch-info">
+          <div class="swatch-info-name">Info</div>
+          <div class="swatch-info-hex">#3ABFBF</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Color Ratios</h3>
+    <p><strong>The 70-20-10 Rule:</strong> Midnight (70% of any composition) → Bone or Slate (20% — text, cards, secondary surfaces) → Ember (10% — CTAs, active states, accent moments). Ember should feel like a <em>spark</em> in the design — rare enough to command attention every time it appears.</p>
+
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Use Ember sparingly — it's your power color. CTAs, active states, and the logo only.</li>
+          <li>Default to Midnight backgrounds for dark mode (primary experience)</li>
+          <li>Use Bone for light mode — never pure white (#FFFFFF)</li>
+          <li>Use functional colors only for their intended purpose (green = secure, red = alert, etc.)</li>
+          <li>Ensure WCAG AA contrast minimum (4.5:1) for all text/background combinations</li>
+          <li>Use Slate for card surfaces, input fields, and secondary containers on dark backgrounds</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Use Ember as a background color for large areas (it overwhelms)</li>
+          <li>Use pure black (#000000) — always use Midnight instead</li>
+          <li>Use pure white (#FFFFFF) — always use Bone instead</li>
+          <li>Combine multiple functional colors in close proximity (it looks like a traffic light)</li>
+          <li>Use Ember on red backgrounds — insufficient contrast</li>
+          <li>Invent new colors. This palette is fixed. Opacity variants are acceptable.</li>
+          <li>Use blue as a primary color. Blue = every other security app. We're warm.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ====================== -->
+  <!-- SECTION 4: TYPOGRAPHY   -->
+  <!-- ====================== -->
+  <div class="section">
+    <div class="sec-tag">04 — Typography</div>
+    <h2>Dos & Don'ts: Type</h2>
+
+    <h3>Type Scale</h3>
+
+    <div class="type-row">
+      <div class="type-label">Display / H1</div>
+      <div class="type-sample" style="font-family: 'Outfit', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1;">Sharp when it matters.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">H2</div>
+      <div class="type-sample" style="font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Privacy Hardening</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">H3</div>
+      <div class="type-sample" style="font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 600;">Encounter Protection</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">Body</div>
+      <div class="type-sample" style="font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 400; color: var(--text-dim); line-height: 1.7;">Ketsa audits your phone's privacy settings and guides you through hardening each one — biometrics, location services, AirDrop, Bluetooth, and more.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-label">Legal / Editorial</div>
+      <div class="type-sample" style="font-family: 'Newsreader', serif; font-size: 16px; font-weight: 400; color: var(--text-dim); line-height: 1.8;">Under the Fourth Amendment, individuals have the right to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures.</div>
+    </div>
+
+    <div class="type-row" style="border-bottom: none;">
+      <div class="type-label">Mono / Technical</div>
+      <div class="type-sample" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 400; color: var(--text-dim);">Recording active · GPS locked · 3 contacts notified · 00:04:32</div>
+    </div>
+
+    <div class="dd-grid" style="margin-top: 36px;">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Use Outfit for all UI text, headlines, buttons, and navigation</li>
+          <li>Use Newsreader (serif) only for long-form legal content and editorial articles</li>
+          <li>Use IBM Plex Mono for status readouts, technical data, timestamps, and code</li>
+          <li>Use tight negative letter-spacing on headlines (-1px to -2px)</li>
+          <li>Use 700–800 weight for headlines, 400–500 for body</li>
+          <li>Maintain minimum 15px body text size for readability</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Substitute other typefaces — Outfit, Newsreader, and IBM Plex Mono are the only approved fonts</li>
+          <li>Use Newsreader for UI elements (it's for reading, not interface)</li>
+          <li>Use all-caps body text — ALL CAPS is reserved for labels and the tracked wordmark only</li>
+          <li>Use light weights (100–200) — they disappear on mobile screens</li>
+          <li>Center-align body text. Always left-align. Center is for headlines and logos only.</li>
+          <li>Use decorative or script typefaces anywhere, ever</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ====================== -->
+  <!-- SECTION 5: TONE         -->
+  <!-- ====================== -->
+  <div class="section">
+    <div class="sec-tag">05 — Tone of Voice</div>
+    <h2>Dos & Don'ts: Language</h2>
+
+    <p>Ketsa's voice is <strong>confident, direct, and warm.</strong> We speak like a trusted friend who happens to know a lot about privacy law — not a corporate legal department, not a hacker forum, and not a scared survivalist.</p>
+
+    <h3>Voice Principles</h3>
+    <div class="tone-grid">
+      <div class="tone-card">
+        <h5>Empowering, not paranoid</h5>
+        <p class="tone-yes">"Know your rights before you need them."</p>
+        <p class="tone-no">"They're watching everything you do."</p>
+      </div>
+      <div class="tone-card">
+        <h5>Clear, not clever</h5>
+        <p class="tone-yes">"Ketsa records audio, video, and GPS during encounters."</p>
+        <p class="tone-no">"Our omnichannel capture suite leverages geospatial telemetry."</p>
+      </div>
+      <div class="tone-card">
+        <h5>Pro-privacy, not anti-authority</h5>
+        <p class="tone-yes">"Accountability protects everyone."</p>
+        <p class="tone-no">"The police don't want you to have this app."</p>
+      </div>
+      <div class="tone-card">
+        <h5>Urgent when needed, calm by default</h5>
+        <p class="tone-yes">"Your phone is ready." / "Recording. GPS locked. Contacts notified."</p>
+        <p class="tone-no">"⚠️ DANGER! ACTIVATE NOW! 🚨"</p>
+      </div>
+    </div>
+
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Use second person — "your rights," "your phone," "you're protected"</li>
+          <li>Use active voice — "Ketsa records" not "recordings are made by Ketsa"</li>
+          <li>Use plain English for legal concepts — explain, don't intimidate</li>
+          <li>Acknowledge that encounters are stressful — be human about it</li>
+          <li>Frame privacy as a positive choice, not a defensive reaction</li>
+          <li>Use "preparation" and "awareness" language</li>
+          <li>Reference specific rights by name (Fourth Amendment, Fifth Amendment) — education builds confidence</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Use fear-based language — no "threats," "dangers," "enemies," or "attacks"</li>
+          <li>Use military or tactical language — no "deploy," "tactical," "ops," "execute"</li>
+          <li>Use partisan political language — Ketsa is for everyone, regardless of political affiliation</li>
+          <li>Demonize law enforcement, government, or any institution</li>
+          <li>Use jargon without explanation — if a term requires a law degree, explain it</li>
+          <li>Use exclamation points in the app UI — they create anxiety. Save them for marketing copy only.</li>
+          <li>Use passive-aggressive scare tactics ("Most people don't realize...")</li>
+          <li>Promise legal outcomes — Ketsa is a tool, not a lawyer</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Words We Use vs. Words We Avoid</h3>
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Ketsa Vocabulary</div>
+        <ul>
+          <li>Privacy hardening</li>
+          <li>Encounter protection</li>
+          <li>Digital self-defense</li>
+          <li>Know your rights</li>
+          <li>Awareness / prepared / ready</li>
+          <li>Documentation / record / evidence</li>
+          <li>Accountability</li>
+          <li>Activate / active / running</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Never Use</div>
+        <ul>
+          <li>Surveillance / spy / stealth</li>
+          <li>Weapon / arsenal / ammunition</li>
+          <li>Fight back / resist / combat</li>
+          <li>Enemy / opponent / threat</li>
+          <li>Hide / conceal / covert</li>
+          <li>Tactical / ops / deploy / execute</li>
+          <li>Revolution / uprising / resist</li>
+          <li>Guaranteed / bulletproof / foolproof</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ======================== -->
+  <!-- SECTION 6: IMAGERY       -->
+  <!-- ======================== -->
+  <div class="section">
+    <div class="sec-tag">06 — Photography & Imagery</div>
+    <h2>Dos & Don'ts: Visuals</h2>
+
+    <p>Ketsa's visual world should feel <strong>modern, diverse, warm, and real.</strong> People in natural settings, natural light, natural poses. No stock photo energy.</p>
+
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Show diverse people in real, everyday contexts — driving, walking, working, living</li>
+          <li>Use warm, natural lighting — golden hour, window light, street-lit evenings</li>
+          <li>Show confidence and calm — people who look prepared, not scared</li>
+          <li>Feature phones as tools, not focal points — the person is always primary</li>
+          <li>Use urban/suburban backgrounds that feel like real neighborhoods</li>
+          <li>Include delivery/rideshare drivers, journalists, parents, activists — your actual audience</li>
+          <li>Apply a subtle warm color grade to all photography to match the brand palette</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Show confrontational scenes — no police cars, handcuffs, courtrooms, protests</li>
+          <li>Use stock photos of people staring at screens with "concerned" faces</li>
+          <li>Use dark, moody, thriller-style imagery — this isn't a crime show</li>
+          <li>Show hooded figures, shadows, or "hacker" visual tropes</li>
+          <li>Use exclusively young/male/tech-bro imagery — Ketsa is for everyone</li>
+          <li>Feature guns, badges, uniforms, or institutional symbols</li>
+          <li>Use blue-lit, cold, "digital" textures (binary code, circuit boards, matrix effects)</li>
+          <li>Show vulnerable people in distress — we show strength, not victimhood</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ======================== -->
+  <!-- SECTION 7: ICONOGRAPHY   -->
+  <!-- ======================== -->
+  <div class="section">
+    <div class="sec-tag">07 — Iconography & UI Elements</div>
+    <h2>Dos & Don'ts: Interface</h2>
+
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Use rounded-corner rectangles (12–16px radius) for all cards and containers</li>
+          <li>Use 1.5–2px stroke-weight line icons — Lucide, Phosphor, or custom at this weight</li>
+          <li>Use Ember (#E85D3A) for primary CTAs and active states only</li>
+          <li>Use subtle border (1px, var(--border)) on dark surfaces for depth</li>
+          <li>Use 8px spacing grid — all spacing should be multiples of 8</li>
+          <li>Use micro-animations for state changes (0.2s ease transitions)</li>
+          <li>Use the Beacon Lens as a loading/recording indicator (pulsing rings)</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Use filled/solid icons — always outline style at consistent stroke weight</li>
+          <li>Use sharp corners (0px radius) on any container — always round</li>
+          <li>Use more than one accent color per screen — Ember dominates</li>
+          <li>Use gradients on buttons or CTAs — solid Ember only</li>
+          <li>Use alert-style animations (flashing, pulsing red) outside of actual emergency states</li>
+          <li>Use skeleton loaders — use the Beacon Lens animation for all loading states</li>
+          <li>Use bottom sheets for critical actions — encounter activation must be top-level, one tap</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- =========================== -->
+  <!-- SECTION 8: SOCIAL & DIGITAL -->
+  <!-- =========================== -->
+  <div class="section">
+    <div class="sec-tag">08 — Social & Digital Presence</div>
+    <h2>Dos & Don'ts: Platforms</h2>
+
+    <div class="dd-grid">
+      <div class="dd-card dd-do">
+        <div class="dd-label">Do</div>
+        <ul>
+          <li>Use the Strike Mark (K icon) as the profile picture across all platforms</li>
+          <li>Use the tracked wordmark (KETSA) for cover photos and banners</li>
+          <li>Use consistent handle: @ketsa or @ketsaapp across all platforms</li>
+          <li>Share educational content about privacy rights — this builds trust and SEO</li>
+          <li>Engage with privacy, civil rights, and tech communities authentically</li>
+          <li>Use the Ember color as your accent in platform customization where available</li>
+          <li>Credit and amplify the voices of the communities you serve</li>
+        </ul>
+      </div>
+      <div class="dd-card dd-dont">
+        <div class="dd-label">Don't</div>
+        <ul>
+          <li>Post sensationalized encounter videos — Ketsa documents, it doesn't exploit</li>
+          <li>Take political sides on partisan issues — privacy is nonpartisan</li>
+          <li>Use clickbait headlines or fear-based hooks for engagement</li>
+          <li>Share unverified legal information — everything must be reviewed by counsel</li>
+          <li>Use memes or humor about police encounters or rights violations</li>
+          <li>Respond to trolls or bad-faith engagement — don't feed it</li>
+          <li>Repost user encounter footage without explicit written consent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- =========================== -->
+  <!-- SECTION 9: BRAND SUMMARY    -->
+  <!-- =========================== -->
+  <div class="section">
+    <div class="sec-tag">09 — Brand Summary</div>
+    <h2>The Brand at a Glance</h2>
+
+    <div class="box box-accent">
+      <div class="box-label">Ketsa Is</div>
+      <p style="color: var(--text); font-size: 15px; line-height: 2;">
+        Sharp. Warm. Prepared. Trustworthy. Modern. Empowering. Clear-eyed. Calm under pressure. Direct. Inclusive. Educational. Activating. Decisive. Pro-privacy. Human.
+      </p>
+    </div>
+
+    <div class="box" style="border-color: rgba(217, 79, 79, 0.2); background: var(--red-dim);">
+      <div class="box-label" style="color: var(--red);">Ketsa Is Not</div>
+      <p style="color: var(--text); font-size: 15px; line-height: 2;">
+        Paranoid. Cold. Aggressive. Military. Anti-government. Partisan. Fear-based. Surveillance-adjacent. Jargon-heavy. Exclusive. Confrontational. Dark. Edgy. Underground. Complicated.
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-label" style="color: var(--teal);">The One-Line Test</div>
+      <p style="color: var(--text); font-size: 15px;">Before publishing any Ketsa content, ask: <strong><em>"Would a suburban mom AND a frontline journalist both feel comfortable sharing this?"</em></strong> If the answer is no, revise it until it is.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Ketsa Brand Guidelines v1.0 — March 2026 — Confidential — Do not distribute without authorization</p>
+  </div>
+
+</div>
+</body>
+</html>

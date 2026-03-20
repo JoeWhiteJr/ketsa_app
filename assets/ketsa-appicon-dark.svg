@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ketsa App Icon: The Strike Mark -->
+  <!-- Kinetic K that reads as a talon slash -->
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="115" fill="#0c0e14"/>
+  
+  <!-- Subtle radial glow behind the K -->
+  <radialGradient id="glow" cx="50%" cy="50%" r="45%">
+    <stop offset="0%" stop-color="#e85d3a" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#e85d3a" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="256" cy="256" r="200" fill="url(#glow)"/>
+  
+  <!-- The K Mark -->
+  <!-- Vertical stem -->
+  <path d="M168 96 L200 96 L200 236 L200 276 L200 416 L168 416 Z" fill="#e85d3a"/>
+  
+  <!-- Upper diagonal - talon strike going up-right -->
+  <path d="M200 252 L204 240 L340 96 L370 96 L220 256 Z" fill="#e85d3a"/>
+  
+  <!-- Lower diagonal - talon strike going down-right -->  
+  <path d="M220 256 L370 416 L340 416 L204 272 L200 260 Z" fill="#e85d3a"/>
+  
+  <!-- Accent notch at the junction - suggests sharp precision -->
+  <path d="M200 240 L220 256 L200 272 Z" fill="#b8472b"/>
+</svg>

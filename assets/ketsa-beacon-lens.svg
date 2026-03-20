@@ -1,0 +1,25 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ketsa Beacon Lens: Active State Mark -->
+  <!-- Used for recording indicator, GPS lock, and loading states -->
+  
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="160" stroke="#e85d3a" stroke-width="1.5" opacity="0.12"/>
+  
+  <!-- Ring 4 -->
+  <circle cx="200" cy="200" r="130" stroke="#e85d3a" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Ring 3 -->
+  <circle cx="200" cy="200" r="100" stroke="#e85d3a" stroke-width="2.5" opacity="0.35"/>
+  
+  <!-- Ring 2 -->
+  <circle cx="200" cy="200" r="70" stroke="#e85d3a" stroke-width="3" opacity="0.55"/>
+  
+  <!-- Ring 1 -->
+  <circle cx="200" cy="200" r="42" stroke="#e85d3a" stroke-width="3.5" opacity="0.75"/>
+  
+  <!-- Core - slightly off-center for organic feel -->
+  <circle cx="198" cy="198" r="18" fill="#e85d3a"/>
+  
+  <!-- Inner highlight -->
+  <circle cx="195" cy="195" r="6" fill="#0c0e14" opacity="0.3"/>
+</svg>

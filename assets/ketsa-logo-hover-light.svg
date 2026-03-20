@@ -1,0 +1,38 @@
+<svg width="400" height="480" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ketsa Primary Brand Mark: The Hover — Light Variant -->
+  <!-- For use on Bone (#F0EBE3) or light backgrounds -->
+  
+  <!-- Left Wing - Primary -->
+  <path d="M62 200 L158 130 L178 184 L108 228 Z" fill="#0c0e14" opacity="0.92"/>
+  <!-- Left Wing - Shadow -->
+  <path d="M36 240 L108 228 L126 212 L158 130 L62 200 L28 260 Z" fill="#0c0e14" opacity="0.5"/>
+  
+  <!-- Right Wing - Primary -->
+  <path d="M338 200 L242 130 L222 184 L292 228 Z" fill="#0c0e14" opacity="0.92"/>
+  <!-- Right Wing - Shadow -->
+  <path d="M364 240 L292 228 L274 212 L242 130 L338 200 L372 260 Z" fill="#0c0e14" opacity="0.5"/>
+  
+  <!-- Body -->
+  <path d="M178 108 L200 80 L222 108 L216 240 L200 360 L184 240 Z" fill="#0c0e14"/>
+  
+  <!-- Head -->
+  <ellipse cx="200" cy="74" rx="20" ry="28" fill="#0c0e14"/>
+  
+  <!-- Eye - Left -->
+  <circle cx="192" cy="68" r="6" fill="#f0ebe3"/>
+  <circle cx="193.5" cy="66.5" r="2" fill="#0c0e14" opacity="0.4"/>
+  
+  <!-- Eye - Right -->
+  <circle cx="208" cy="68" r="6" fill="#f0ebe3"/>
+  <circle cx="209.5" cy="66.5" r="2" fill="#0c0e14" opacity="0.4"/>
+  
+  <!-- Beak -->
+  <path d="M196 78 L200 88 L204 78 Z" fill="#e85d3a"/>
+  
+  <!-- Tail Feathers -->
+  <path d="M184 320 L200 400 L216 320 Z" fill="#0c0e14" opacity="0.6"/>
+  <path d="M190 320 L200 390 L210 320 Z" fill="#0c0e14" opacity="0.8"/>
+  
+  <!-- Wordmark -->
+  <text x="200" y="462" text-anchor="middle" font-family="Outfit, -apple-system, sans-serif" font-weight="800" font-size="44" letter-spacing="8" fill="#0c0e14">KETSA</text>
+</svg>

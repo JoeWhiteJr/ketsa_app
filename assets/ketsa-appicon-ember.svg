@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ketsa App Icon: Ember Variant -->
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="115" fill="#e85d3a"/>
+  
+  <!-- Subtle inner shadow -->
+  <radialGradient id="inner" cx="50%" cy="40%" r="50%">
+    <stop offset="0%" stop-color="white" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="256" cy="220" r="220" fill="url(#inner)"/>
+  
+  <!-- The K Mark - White -->
+  <path d="M168 96 L200 96 L200 236 L200 276 L200 416 L168 416 Z" fill="white"/>
+  <path d="M200 252 L204 240 L340 96 L370 96 L220 256 Z" fill="white"/>
+  <path d="M220 256 L370 416 L340 416 L204 272 L200 260 Z" fill="white"/>
+  <path d="M200 240 L220 256 L200 272 Z" fill="#c44a2a"/>
+</svg>

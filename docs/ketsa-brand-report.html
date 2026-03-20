@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketsa — Brand Identity Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08090c;
+    --surface: #0f1115;
+    --surface-2: #161920;
+    --border: #1f222d;
+    --border-light: #282c3a;
+    --text: #e4e2de;
+    --text-dim: #8b8994;
+    --accent: #e85d3a;
+    --accent-glow: rgba(232, 93, 58, 0.15);
+    --accent-dim: #b8472b;
+    --teal: #3abfbf;
+    --teal-dim: rgba(58, 191, 191, 0.12);
+    --gold: #d4a843;
+    --gold-dim: rgba(212, 168, 67, 0.10);
+    --green: #4fad68;
+    --green-dim: rgba(79, 173, 104, 0.10);
+    --red: #d94f4f;
+    --red-dim: rgba(217, 79, 79, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 36px 140px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-name {
+    font-size: 88px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, var(--text) 30%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-family: 'Newsreader', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-dim);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .hero-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-meta span::before {
+    content: '—';
+    margin-right: 8px;
+    color: var(--border-light);
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 80px;
+  }
+
+  .section-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: 36px;
+    color: var(--text);
+  }
+
+  p {
+    color: var(--text-dim);
+    font-size: 15.5px;
+    margin-bottom: 16px;
+    line-height: 1.75;
+  }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  /* Boxes */
+  .box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 24px 0;
+  }
+
+  .box-accent {
+    border-color: var(--accent-dim);
+    background: linear-gradient(135deg, var(--accent-glow), var(--surface));
+  }
+
+  .box-teal {
+    border-color: rgba(58, 191, 191, 0.25);
+    background: linear-gradient(135deg, var(--teal-dim), var(--surface));
+  }
+
+  .box p { margin-bottom: 0; }
+
+  .box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .box-accent .box-label { color: var(--accent); }
+  .box-teal .box-label { color: var(--teal); }
+
+  /* Grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  /* Table */
+  .tbl {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+
+  .tbl th {
+    text-align: left;
+    padding: 12px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+
+  .tbl td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(31, 34, 45, 0.6);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+
+  .tbl .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .badge-green { background: var(--green-dim); color: var(--green); }
+  .badge-gold { background: var(--gold-dim); color: var(--gold); }
+  .badge-red { background: var(--red-dim); color: var(--red); }
+
+  /* Logo Concept Cards */
+  .concept {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .concept::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at top right, var(--accent-glow), transparent 70%);
+    pointer-events: none;
+  }
+
+  .concept-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--border-light);
+    position: absolute;
+    top: 20px;
+    right: 28px;
+  }
+
+  .concept h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .concept .concept-sub {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .concept p {
+    font-size: 14.5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Swatches */
+  .palette {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .swatch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .swatch {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .swatch-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  .swatch-hex {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: var(--border-light);
+  }
+
+  /* Type Specimens */
+  .specimen {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px;
+    margin: 20px 0;
+  }
+
+  .specimen-display {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .specimen-info {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  /* Tagline display */
+  .tagline-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tagline-text {
+    font-family: 'Newsreader', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text);
+  }
+
+  .tagline-use {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    margin-left: 24px;
+  }
+
+  /* Steps */
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 16px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .step h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .step p {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  /* Lists */
+  ul { padding-left: 20px; margin: 12px 0; }
+  li { color: var(--text-dim); font-size: 14.5px; margin-bottom: 8px; line-height: 1.65; }
+  li strong { color: var(--text); }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 64px 0;
+  }
+
+  /* Verb showcase */
+  .verb-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .verb-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+
+  .verb-example {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .verb-context {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 40px 20px 80px; }
+    .hero-name { font-size: 56px; }
+    h2 { font-size: 28px; }
+    .grid-2, .verb-grid { grid-template-columns: 1fr; }
+    .hero-meta { flex-direction: column; gap: 8px; }
+    .tagline-card { flex-direction: column; gap: 8px; }
+    .tagline-use { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Brand Identity Report</div>
+    <h1 class="hero-name">Ketsa</h1>
+    <p class="hero-sub">A coined name with activation energy — built for a mobile privacy protection platform that hardens your phone, documents your encounters, and teaches you your rights.</p>
+    <div class="hero-meta">
+      <span>Version 1.0</span>
+      <span>March 2026</span>
+      <span>Confidential</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: WHY KETSA -->
+  <div class="section">
+    <div class="section-tag">01 — The Name</div>
+    <h2>Why Ketsa Works</h2>
+
+    <p>Ketsa is a coined word with no established meaning in any major language. It evokes the <strong>kestrel</strong> — the hovering falcon known for holding perfectly still in midair while watching the ground below — without being a direct reference. It carries echoes of sharp, kinetic words across multiple languages: <em>ketsu</em> (Japanese: determination), <em>ketsav</em> (Hebrew: hawk-like), <em>kestrel</em> (English: the smallest falcon).</p>
+
+    <p>The name is five letters, two syllables, and begins with a hard K — one of the most memorable consonant openings in branding (Kodak, Kayak, Kindle, Klarna). The -tsa ending is unusual in English, which creates distinctiveness without sacrificing pronounceability.</p>
+
+    <div class="box box-accent">
+      <div class="box-label">Brand Positioning Statement</div>
+      <p style="font-size: 16px; color: var(--text); line-height: 1.8; font-family: 'Newsreader', serif; font-style: italic;">"Ketsa is the all-in-one privacy platform that hardens your phone, documents your encounters, and teaches you your rights — because knowing and exercising your rights isn't paranoia, it's preparation."</p>
+    </div>
+
+    <h3>Verb & Activation Language</h3>
+    <p>Ketsa must work as an action. Here's how it sounds in real use:</p>
+
+    <div class="verb-grid">
+      <div class="verb-card">
+        <div class="verb-example">"Ketsa your phone."</div>
+        <div class="verb-context">Onboarding / privacy hardening</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-example">"I Ketsa'd before the stop."</div>
+        <div class="verb-context">Encounter activation</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-example">"Get Ketsa'd."</div>
+        <div class="verb-context">Campaign / social media</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-example">"Ketsa is running."</div>
+        <div class="verb-context">Status notification</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-example">"Ketsa up."</div>
+        <div class="verb-context">Quick activation command</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-example">"Are you Ketsa'd?"</div>
+        <div class="verb-context">Peer-to-peer / community</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: DOMAIN -->
+  <div class="section">
+    <div class="section-tag">02 — Domain Strategy</div>
+    <h2>Domain & Digital Real Estate</h2>
+
+    <p>Ketsa's primary advantage is its extremely clean digital landscape. The only existing entity using "Ketsa" is a London-based ambient music producer (ketsa.uk) — a solo artist in a completely different industry with no trademark filings in software or technology.</p>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Status</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">ketsa.app</td>
+          <td><span class="badge badge-green">Likely Available</span></td>
+          <td><strong style="color: var(--accent);">Primary target.</strong> The .app TLD is Google-managed, forces HTTPS, and signals "this is an app" instantly. Clean, modern, credible.</td>
+        </tr>
+        <tr>
+          <td class="mono">getketsa.com</td>
+          <td><span class="badge badge-green">Likely Available</span></td>
+          <td>Strong secondary. "Get Ketsa" doubles as a CTA. Use for marketing/landing pages.</td>
+        </tr>
+        <tr>
+          <td class="mono">ketsa.com</td>
+          <td><span class="badge badge-gold">Needs Check</span></td>
+          <td>May be parked or held by the music producer. Worth a registrar check. If available, grab it immediately.</td>
+        </tr>
+        <tr>
+          <td class="mono">ketsaapp.com</td>
+          <td><span class="badge badge-green">Likely Available</span></td>
+          <td>Fallback option. Functional but less elegant.</td>
+        </tr>
+        <tr>
+          <td class="mono">ketsa.co</td>
+          <td><span class="badge badge-gold">Needs Check</span></td>
+          <td>The .co TLD is popular with startups. Worth grabbing as a redirect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box box-teal">
+      <div class="box-label">Recommendation</div>
+      <p style="color: var(--text);"><strong>Register ketsa.app as your primary domain today.</strong> Also grab getketsa.com for marketing funnels. Total cost: ~$25/year for both. Check ketsa.com availability and make a purchase offer if it's parked (budget up to $500 for a parked 5-letter .com). Do this before anything else — domains are first-come, first-served.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TRADEMARK -->
+  <div class="section">
+    <div class="section-tag">03 — Trademark Landscape</div>
+    <h2>Trademark & App Store Clearance</h2>
+
+    <p>This is where Ketsa shines relative to every other name we evaluated.</p>
+
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-label" style="color: var(--green);">App Store — iOS</div>
+        <p style="color: var(--text);"><strong>No conflicts found.</strong> No apps named "Ketsa" exist on the iOS App Store. Zero results in privacy, security, or utilities categories.</p>
+      </div>
+      <div class="box">
+        <div class="box-label" style="color: var(--green);">App Store — Android</div>
+        <p style="color: var(--text);"><strong>No conflicts found.</strong> No apps named "Ketsa" exist on Google Play. The name is entirely unoccupied.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-label" style="color: var(--green);">USPTO — Class 9</div>
+        <p style="color: var(--text);">No "Ketsa" trademark filings found in Class 9 (downloadable software). Clean path to registration.</p>
+      </div>
+      <div class="box">
+        <div class="box-label" style="color: var(--green);">USPTO — Class 42</div>
+        <p style="color: var(--text);">No "Ketsa" trademark filings found in Class 42 (SaaS/cloud services). Clean path to registration.</p>
+      </div>
+    </div>
+
+    <p>The only entity using "Ketsa" commercially is a solo music producer based in London (ketsa.uk / Bandcamp). Music production falls under different Nice classes (Class 41 — entertainment services, Class 9 only for recorded music). This creates no blocking position for a mobile software application in privacy/security.</p>
+
+    <div class="box box-teal">
+      <div class="box-label">Trademark Filing Strategy</div>
+      <p style="color: var(--text);">File an intent-to-use trademark application for "KETSA" in <strong>Class 9</strong> (downloadable mobile application for privacy protection, encounter documentation, and legal education) and <strong>Class 42</strong> (SaaS features, cloud-based legal content delivery). Estimated cost: $250–$350 per class filing fee + $500–$1,500 for attorney preparation. Budget $1,500–$2,500 total. Expected timeline to registration: 8–14 months.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: TAGLINES -->
+  <div class="section">
+    <div class="section-tag">04 — Messaging</div>
+    <h2>Taglines & Campaign Language</h2>
+
+    <div class="tagline-card">
+      <span class="tagline-text">"Sharp when it matters."</span>
+      <span class="tagline-use">Primary Tagline</span>
+    </div>
+
+    <div class="tagline-card">
+      <span class="tagline-text">"Your phone, fully aware."</span>
+      <span class="tagline-use">App Store Subtitle</span>
+    </div>
+
+    <div class="tagline-card">
+      <span class="tagline-text">"Privacy isn't paranoia."</span>
+      <span class="tagline-use">Campaign Line</span>
+    </div>
+
+    <div class="tagline-card">
+      <span class="tagline-text">"Know your rights. Keep them."</span>
+      <span class="tagline-use">Legal Pillar</span>
+    </div>
+
+    <div class="tagline-card">
+      <span class="tagline-text">"One tap. Every protection."</span>
+      <span class="tagline-use">Encounter Pillar</span>
+    </div>
+
+    <div class="tagline-card">
+      <span class="tagline-text">"Get Ketsa'd."</span>
+      <span class="tagline-use">Social / Viral</span>
+    </div>
+
+    <h3>App Store Description (First Line)</h3>
+    <div class="box">
+      <p style="color: var(--text); font-size: 15px;"><strong>Ketsa — Privacy, Protection & Rights</strong><br>Harden your phone. Document your encounters. Know your rights. The first all-in-one privacy platform that combines device security audits, one-tap encounter recording with GPS and emergency alerts, and state-specific know-your-rights guides that update as the law evolves.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5: LOGO CONCEPTS -->
+  <div class="section">
+    <div class="section-tag">05 — Visual Identity</div>
+    <h2>Logo Concept Directions</h2>
+
+    <p>Three distinct approaches, each designed to work at every scale — from 29×29px app icon to billboard. The visual identity should feel <strong>sharp, warm, and trustworthy</strong> — a counterpoint to the cold blues and greens that dominate the privacy app market.</p>
+
+    <div class="concept">
+      <div class="concept-num">01</div>
+      <h4>The Hover</h4>
+      <p class="concept-sub">Inspired by the kestrel falcon, frozen in midair</p>
+      <p>A single geometric bird shape — not realistic, abstracted to pure angles — captured in the moment of hovering. Wings slightly angled, body still, head tilted down watching. The silhouette should read as a stylized K at certain angles (an easter egg, not forced). Rendered in the accent color (ember orange) against dark backgrounds, or reversed to dark on light.</p>
+      <p style="margin-top: 12px;"><strong>Why it works:</strong> The kestrel's hover is the perfect metaphor — perfectly still, intensely focused, watching everything below. It's a bird of prey, but the posture is patient, not attacking. It communicates vigilance without aggression. At small sizes, the angular wings create an instantly recognizable mark.</p>
+      <p style="margin-top: 12px;"><strong>Execution:</strong> Maximum 8–10 points in the vector path. This must be geometric enough to feel like a tech logo, organic enough to feel alive. Test at 16px favicon size — if it's still recognizable, you've nailed it.</p>
+    </div>
+
+    <div class="concept">
+      <div class="concept-num">02</div>
+      <h4>The Strike Mark</h4>
+      <p class="concept-sub">Kinetic energy captured in a single gesture</p>
+      <p>A bold, diagonal slash — like a talon mark or a quick pen stroke — that also reads as the letter K. One continuous motion, thick to thin, suggesting speed and decisiveness. This isn't a bird; it's the <em>feeling</em> of a bird's dive. The mark sits at an angle (roughly 15° off vertical) to create dynamic energy even when static.</p>
+      <p style="margin-top: 12px;"><strong>Why it works:</strong> When you activate Ketsa during an encounter, you need the app to feel like it's <em>doing something immediately.</em> This mark communicates instant action. It's also the most versatile — it works as a standalone icon, an animated loading state (the stroke draws itself), and a watermark on recorded video.</p>
+      <p style="margin-top: 12px;"><strong>Execution:</strong> The stroke should have visible pressure dynamics — thicker at the point of impact, tapering to a sharp end. Think calligraphy, not illustration. One color only. The angle is critical — too steep feels like a slash (aggressive), too shallow feels like an underline (passive). 15° is the sweet spot.</p>
+    </div>
+
+    <div class="concept">
+      <div class="concept-num">03</div>
+      <h4>The Beacon Lens</h4>
+      <p class="concept-sub">An eye that protects, not surveils</p>
+      <p>A concentric circle motif — like a camera lens, a ripple from a GPS pin, or a focused eye — with a warm center point that radiates outward. Two to three rings, tight spacing, with the innermost circle solid (the "iris"). The rings can subtly animate in the app (pulsing when active, static when idle).</p>
+      <p style="margin-top: 12px;"><strong>Why it works:</strong> It ties directly to all three pillars: the lens = recording, the rings = GPS signal broadcast, the eye = awareness/education. The warm color palette prevents it from feeling like surveillance tech. At app-icon size, the concentric circles are instantly distinctive on a home screen.</p>
+      <p style="margin-top: 12px;"><strong>Execution:</strong> The rings should have slightly uneven spacing (tighter toward the center) to create organic tension. The center dot should be slightly off-center — not a bullseye, more like an iris. This prevents the "target" association. Warm gradient on the center point (ember to gold) against midnight background.</p>
+    </div>
+
+    <div class="box box-accent">
+      <div class="box-label">Logo Recommendation</div>
+      <p style="color: var(--text);"><strong>Lead with Concept 01 (The Hover) as your primary brand mark and Concept 02 (The Strike Mark) as your app icon.</strong> The Hover carries the brand story — it's what goes on the website, pitch deck, and merch. The Strike Mark is what lives on the phone — it's faster, simpler, and more impactful at small sizes. Having a distinct brand mark and app icon is standard practice for premium app brands (Notion, Slack, Discord all do this).</p>
+    </div>
+  </div>
+
+  <!-- SECTION 6: COLOR -->
+  <div class="section">
+    <div class="section-tag">06 — Color System</div>
+    <h2>Color Palette</h2>
+
+    <p>Deliberately warm in a market dominated by cold blue/green/purple security apps. The palette says "trust and action" — not "corporate IT department."</p>
+
+    <h3>Primary Palette</h3>
+    <div class="palette">
+      <div class="swatch-item">
+        <div class="swatch" style="background: #0c0e14;"></div>
+        <span class="swatch-name">Midnight</span>
+        <span class="swatch-hex">#0C0E14</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #e85d3a;"></div>
+        <span class="swatch-name">Ember</span>
+        <span class="swatch-hex">#E85D3A</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #f0ebe3;"></div>
+        <span class="swatch-name">Bone</span>
+        <span class="swatch-hex">#F0EBE3</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #1a1d28;"></div>
+        <span class="swatch-name">Slate</span>
+        <span class="swatch-hex">#1A1D28</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #8b8994;"></div>
+        <span class="swatch-name">Pewter</span>
+        <span class="swatch-hex">#8B8994</span>
+      </div>
+    </div>
+
+    <p><strong>Ember (#E85D3A)</strong> is the signature color. It's warm, urgent without being aggressive, and stands out dramatically against dark interfaces. It reads as "active" — perfect for the encounter protection feature's activation state.</p>
+
+    <h3>Functional Colors</h3>
+    <div class="palette">
+      <div class="swatch-item">
+        <div class="swatch" style="background: #4fad68;"></div>
+        <span class="swatch-name">Secure</span>
+        <span class="swatch-hex">#4FAD68</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #d4a843;"></div>
+        <span class="swatch-name">Warning</span>
+        <span class="swatch-hex">#D4A843</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #d94f4f;"></div>
+        <span class="swatch-name">Alert</span>
+        <span class="swatch-hex">#D94F4F</span>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background: #3abfbf;"></div>
+        <span class="swatch-name">Info</span>
+        <span class="swatch-hex">#3ABFBF</span>
+      </div>
+    </div>
+
+    <p>Functional colors follow standard UX conventions — green for secure, red for alert — but shifted slightly warm to match the overall palette temperature. The teal (Info) provides a cool counterpoint for educational content and legal guides.</p>
+  </div>
+
+  <!-- SECTION 7: TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-tag">07 — Typography</div>
+    <h2>Type System</h2>
+
+    <div class="specimen">
+      <div class="specimen-display" style="font-family: 'Outfit', sans-serif; letter-spacing: -2px;">Ketsa</div>
+      <div class="specimen-info">Wordmark — Outfit ExtraBold, tracked tight. Sharp geometric sans with personality.</div>
+    </div>
+
+    <div class="specimen">
+      <div class="specimen-display" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: 8px; text-transform: uppercase;">KETSA</div>
+      <div class="specimen-info">Alternative wordmark — Outfit ExtraBold, tracked wide, all caps. Campaign use, app splash screen.</div>
+    </div>
+
+    <h3>Type Pairing</h3>
+    <ul>
+      <li><strong>Headlines & UI:</strong> Outfit (600–800 weight) — geometric, modern, distinctive without being trendy. The round O and sharp K give it character.</li>
+      <li><strong>Body & Editorial:</strong> Newsreader — a transitional serif for long-form legal guides and educational content. Adds warmth and readability to the legal education pillar.</li>
+      <li><strong>Mono / Technical:</strong> IBM Plex Mono — for settings screens, privacy audit readouts, status indicators, and legal citations. Clinical precision where needed.</li>
+    </ul>
+
+    <p><strong>Rationale:</strong> The Outfit + Newsreader pairing gives you two voices — one sharp and modern (the app itself), one warm and authoritative (the legal content). This dual-register approach serves both the "Ketsa up before your shift" user and the "I'm reading about Fourth Amendment case law" user without creating cognitive dissonance.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 8: COMPETITIVE POSITIONING -->
+  <div class="section">
+    <div class="section-tag">08 — Competitive Position</div>
+    <h2>Market Positioning</h2>
+
+    <p>Ketsa occupies white space that no competitor currently claims — the intersection of all three pillars.</p>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Ketsa</th>
+          <th>TurnSignl</th>
+          <th>ACLU Mobile Justice</th>
+          <th>Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Privacy Hardening</td>
+          <td><strong style="color: var(--green);">✓ Full audit</strong></td>
+          <td style="color: var(--text-dim);">✗</td>
+          <td style="color: var(--text-dim);">✗</td>
+          <td style="color: var(--text-dim);">Encryption only</td>
+        </tr>
+        <tr>
+          <td>Encounter Recording</td>
+          <td><strong style="color: var(--green);">✓ A/V + GPS + alerts</strong></td>
+          <td style="color: var(--text-dim);">Live attorney</td>
+          <td style="color: var(--green);">✓ Recording only</td>
+          <td style="color: var(--text-dim);">✗</td>
+        </tr>
+        <tr>
+          <td>Legal Education</td>
+          <td><strong style="color: var(--green);">✓ State-specific, updated</strong></td>
+          <td style="color: var(--text-dim);">Attorney advice</td>
+          <td style="color: var(--text-dim);">Basic info</td>
+          <td style="color: var(--text-dim);">✗</td>
+        </tr>
+        <tr>
+          <td>One-Tap Activation</td>
+          <td><strong style="color: var(--green);">✓</strong></td>
+          <td style="color: var(--green);">✓</td>
+          <td style="color: var(--text-dim);">✗</td>
+          <td style="color: var(--text-dim);">✗</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td><strong>$4.99–6.99/mo</strong></td>
+          <td>$4.99/mo</td>
+          <td>Free</td>
+          <td>Free</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box">
+      <div class="box-label" style="color: var(--teal);">Positioning Line for Investors & Press</div>
+      <p style="color: var(--text); font-size: 15px;">"TurnSignl gives you a lawyer during a stop. ACLU gives you a camera. Signal gives you encryption. <strong>Ketsa gives you all three, plus the knowledge to use them.</strong> We're the first all-in-one digital self-defense platform."</p>
+    </div>
+  </div>
+
+  <!-- SECTION 9: NEXT STEPS -->
+  <div class="section">
+    <div class="section-tag">09 — Next Steps</div>
+    <h2>Execution Roadmap</h2>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <h4>Secure Digital Real Estate — This Week</h4>
+        <p>Register ketsa.app and getketsa.com immediately. Check ketsa.com availability and make a purchase offer if parked. Also grab @ketsa or @ketsaapp on Instagram, Twitter/X, TikTok, and LinkedIn. Cost: ~$50–$500 depending on .com availability.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <h4>Trademark Filing — Weeks 1–2</h4>
+        <p>Engage a trademark attorney to file intent-to-use applications for "KETSA" in Classes 9 and 42. The clean landscape means this should be straightforward. Budget: $1,500–$2,500 for both classes including attorney fees.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <h4>Logo & Brand Design — Weeks 2–4</h4>
+        <p>Commission professional logo exploration based on the three concept directions in this report. Deliverables: primary brand mark (The Hover), app icon (The Strike Mark), wordmark, and basic brand guidelines (color, type, spacing rules). Budget: $2,000–$5,000 for a professional brand designer.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">04</div>
+      <div>
+        <h4>Landing Page & Waitlist — Weeks 3–5</h4>
+        <p>Build a "coming soon" page at ketsa.app with email capture. Use the brand identity to establish visual credibility from day one. This becomes your first marketing asset and validates demand before development is complete.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">05</div>
+      <div>
+        <h4>App Store Name Reservation — Week 2</h4>
+        <p>Create Apple Developer and Google Play Developer accounts (if not already active) and reserve the app name "Ketsa" in both stores. Apple allows name reservation for 180 days with an app record. Google requires an APK upload but allows unpublished listings. Do this early — app names are first-come, first-served.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Ketsa Brand Identity Report v1.0 — March 2026 — Confidential</p>
+  </div>
+
+</div>
+</body>
+</html>
